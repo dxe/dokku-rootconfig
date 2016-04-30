@@ -1,4 +1,4 @@
 [plugin]
-description = "Prevents non-root users from accessing config."
+description = "only root users can use config"
 version = "1.0.0"
 [plugin.config]

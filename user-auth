@@ -2,5 +2,10 @@
 # Deny config access to any user who isn't root
 
 set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
-[[ "$SSH_USER" != "root" && $3 == config:* ]] && exit 1
+
+if [[ "$SSH_USER" != "root" && $3 == config* ]]; then
+  echo "You must be root to manage app configuration."
+  exit 1
+fi
+
 exit 0
