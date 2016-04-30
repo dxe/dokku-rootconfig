@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Deny config access to any user who isn't root
+
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+[[ "$SSH_USER" != "root" && $3 == config:* ]] && exit 1
+exit 0
