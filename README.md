@@ -2,6 +2,8 @@ Dokku Root Config Plugin
 ========================
 This is a very simple Dokku plugin that prevents any user except root from accessing app configuration options.
 
+**Note:** Currently this isn't secure, because non-root users [can still manage plugins](https://github.com/directactioneverywhere/dokku-rootconfig/issues/2), meaning they could just disable this plugin then access config. If you use this version you will also want to disable users from managing plugins. That might become baked into this or made a separate plugin in a future release.
+
 Installation
 ------------
 
